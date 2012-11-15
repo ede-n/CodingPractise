@@ -27,7 +27,8 @@ public class AnagramTest {
 		    y[j] = temp;
 		    // System.out.println(String.copyValueOf(y));
 		    break;
-		}
+		}else 
+		    return false;
 	    }
 	}
 	
