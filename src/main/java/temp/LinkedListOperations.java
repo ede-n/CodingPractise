@@ -1,7 +1,9 @@
+package temp;
+
 import java.util.Map;
 import java.util.HashMap;
 public class LinkedListOperations {
-    
+
     public static <T> Node<T> createLList(T[] t) {
 	if (t == null)
 	    return null;
@@ -13,15 +15,15 @@ public class LinkedListOperations {
 	    prev.setNext(node);
 	    prev = node;
 	}
-	
+
 	return head;
     }
 
     public static <T> void printLList(String header, Node<T> head) {
-	
+
 	if (head == null)
 	    return;
-	
+
 	StringBuilder sb = new StringBuilder();
 	sb.append("**" + header + "**\n");
 
@@ -40,7 +42,7 @@ public class LinkedListOperations {
      */
     public static <T> void removeDuplicates(final Node<T> head) {
 	Map<String,Integer> uniqMap = new HashMap<String,Integer>();
-	
+
 	Node<T> prev = head;
 	Node<T> temp = prev;
 	uniqMap.put(temp.toString(), 1);
@@ -48,7 +50,7 @@ public class LinkedListOperations {
 	    temp = temp.getNext();
 	    if (uniqMap.containsKey(temp.toString())) {
 		if(temp.getNext() != null)
-		    prev.setNext(temp.getNext());	 
+		    prev.setNext(temp.getNext());
 	    } else {
 		uniqMap.put(temp.toString(), 1);
 	    }
@@ -63,7 +65,7 @@ public class LinkedListOperations {
      *T(n) = O(n^2)
      */
     public static <T> void removeDups(final Node<T> head) {
-	
+
 	Node<T> prev = head;
 	Node<T> temp = prev;
 	while (temp.getNext() != null) {
@@ -76,11 +78,11 @@ public class LinkedListOperations {
 		}
 		uniqPointer = uniqPointer.getNext();
 	    }
-	    prev = temp;	    
+	    prev = temp;
 	}
 	return;
     }
-    
+
     /**
      *BEAUTY!!!
      *find the nth to last element.
@@ -89,10 +91,10 @@ public class LinkedListOperations {
      *The element p1 points to is the nth from last.
      */
     public static <T> Node<T> nthToLast(final Node<T> head, int n) {
-	
+
 	if (head == null || n < 1)
 	    return null;
-	
+
 	Node<T> p1 = head;
 	Node<T> p2 = head;
 	//slide p2 forward to n locations, let p1 stay put.
@@ -107,7 +109,7 @@ public class LinkedListOperations {
 	    p1 = p1.getNext();
 	    p2 = p2.getNext();
 	}
-	
+
 	return p1;
     }
 
@@ -121,7 +123,7 @@ public class LinkedListOperations {
      *Input: (3 -> 1 -> 5) + (5 -> 9 -> 2)
      *Output: 8 -> 0 -> 8
      */
-    public static Node<Integer> addIntLLists (Node<Integer> h1, 
+    public static Node<Integer> addIntLLists (Node<Integer> h1,
 					      Node<Integer> h2) {
 	int sum = 0;
 	int carryFwd = 0;
@@ -143,7 +145,7 @@ public class LinkedListOperations {
 	    head = h2;
 	if (h2 == null)
 	    head = h1;
-	
+
 	while (head != null) {
 	    sum = head.getData() + carryFwd;
 	    Node<Integer> newNode = new Node<Integer>(sum % 10);
@@ -152,10 +154,10 @@ public class LinkedListOperations {
 	    head = head.getNext();
 	    carryFwd = sum / 10;
 	}
-	
+
 	if (carryFwd == 1)
 	    temp.setNext(new Node<Integer>(1));
-	
+
 	return resHead.getNext();
     }
 
@@ -182,5 +184,5 @@ public class LinkedListOperations {
 	n = addIntLLists(createLList(x),createLList(y));
 	printLList("addIntLLists",n);
     }
-    
+
 }

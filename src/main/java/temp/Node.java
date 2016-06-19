@@ -1,7 +1,8 @@
+package temp;
 //import java.lang.IllegalArgumentException;
 
 public class Node<T> {
-    
+
     private T data;
     private Node<T> next;
 
@@ -10,7 +11,7 @@ public class Node<T> {
 	    throw new IllegalArgumentException();
 	this.data = aData;
     }
-    
+
     public T getData() {
 	return this.data;
     }
@@ -31,11 +32,11 @@ public class Node<T> {
     public void addToTail(T data) {
 	Node<T> node = new Node<T>(data);
 	Node<T> n = this;
-	
+
 	while (n.next != null) {
 	    n = n.next;
 	}
-	
+
 	n.next = node;
     }
 
@@ -44,15 +45,14 @@ public class Node<T> {
 	if (n.getData() == data) {
 	    return head.getNext();
 	}
-	while (n.getNext()  != null) { 
+	while (n.getNext()  != null) {
 	    if (n.getNext().getData() == data) {
 		n.setNext(n.getNext().getNext());
 		return head;
 	    }
 	    n = n.getNext();
 	}
-	
+
 	return head;
     }
 }
-

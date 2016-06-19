@@ -1,3 +1,5 @@
+package temp;
+
 import java.util.Map;
 import java.util.HashMap;
 /* Question
@@ -9,7 +11,7 @@ import java.util.HashMap;
  */
 public class RemoveDuplicates {
 
-    //T(n) = O(n) 
+    //T(n) = O(n)
     //Space thrice the size of input ( inputsize + sb_size + uniqueSMap_size );
     public static void v0(String input) {
 	//Loop through the elements in order
@@ -30,11 +32,11 @@ public class RemoveDuplicates {
     public static void v1(String input) {
 	char str[] = input.toCharArray();
 	int len = input.length();
-	int tail = 1; 
+	int tail = 1;
 	//Invariant: [0..tail-1] is a list of unique characters
 	for(int i = 1; i < len; i++) { //for every new element
 	    int j;
-	    for(j = 0; j < tail; j++) { 
+	    for(j = 0; j < tail; j++) {
 		if(str[j] == str[i]) {//if its already seen
 		    break; //skip
 		}
@@ -44,12 +46,12 @@ public class RemoveDuplicates {
 		tail++;
 	    }
 	}
-	
+
        	System.out.println(String.copyValueOf(str) + " length of non duplicate substring from index 0: " + tail);
     }
 
     public static void main(String args[]) {
-	
+
 	v0(args[0]);
 	v1(args[0]);
     }
