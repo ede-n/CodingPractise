@@ -17,3 +17,8 @@ task ch2InsertionSort(type:JavaExec) {
   classpath = files(sourceSets.main.runtimeClasspath)
   main = 'crls.ch2.InsertionSort'
 }
+
+task ch2SelectionSort(type:JavaExec) {
+  classpath = files(sourceSets.main.runtimeClasspath)
+  main = 'crls.ch2.SelectionSort'
+}
