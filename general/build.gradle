@@ -20,6 +20,7 @@ dependencies {
   compile group: 'com.google.guava', name: 'guava', version: '19.0'
   // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
   compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+  testCompile 'org.assertj:assertj-core:3.5.2'
 
 }
 
