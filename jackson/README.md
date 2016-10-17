@@ -12,5 +12,4 @@ Jackson provides three ways of processing Json
 
 ## Programming Questions
 - Convert the following JSON to and from POJO? `jsonprocessing.threeways.databinding.fulldatabinding.UserConversion#convertTo*`
-
-   
+- Convert the User object to List<String, User>
